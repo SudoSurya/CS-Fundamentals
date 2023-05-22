@@ -1,6 +1,6 @@
 package arrays;
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
 class arrays {
 
@@ -9,7 +9,7 @@ class arrays {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        // Scanner sc = new Scanner(System.in);
         int arr[] = new int[10];
         arr[1] = 10;
         System.out.println(arr[0]);

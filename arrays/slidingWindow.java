@@ -1,3 +1,5 @@
+package arrays;
+
 public class slidingWindow {
     static int MaxSubArray(int a[], int k) {
         int kSum = 0;

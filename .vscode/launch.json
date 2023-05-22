@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "subarrays",
+      "request": "launch",
+      "mainClass": "arrays.subarrays",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
+      "name": "slidingWindow",
+      "request": "launch",
+      "mainClass": "arrays.slidingWindow",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "arrays",
       "request": "launch",
       "mainClass": "arrays.arrays",
