@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "minsubarray",
+      "request": "launch",
+      "mainClass": "arrays.minsubarray",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "subarrays",
       "request": "launch",
       "mainClass": "arrays.subarrays",
