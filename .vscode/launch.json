@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "subarraySWT",
+      "request": "launch",
+      "mainClass": "arrays.subarraySWT",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "minsubarray",
       "request": "launch",
       "mainClass": "arrays.minsubarray",
