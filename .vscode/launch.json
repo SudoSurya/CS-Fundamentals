@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "maps",
+      "request": "launch",
+      "mainClass": "arrays.maps",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "subarraySWT",
       "request": "launch",
       "mainClass": "arrays.subarraySWT",
