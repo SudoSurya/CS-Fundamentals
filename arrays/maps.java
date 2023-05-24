@@ -48,7 +48,6 @@ public class maps {
                 numsObj.put(arrs[i], 1);
             }
 
-
         }
         System.out.println(numsObj.size());
         System.out.println(LongSubStr(arrs));

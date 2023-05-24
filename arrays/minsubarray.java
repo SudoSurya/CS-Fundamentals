@@ -21,8 +21,8 @@ public class minsubarray {
     }
 
     public static void main(String[] args) {
-        int[] ARGS = { 1, 3, 44, 4, 4 };
-        int target = 11;
+        int[] ARGS = { 11, 33, 44, 4, 4 };
+        int target = 510;
         System.out.println(minSubArrayLen(target, ARGS));
 
     }
