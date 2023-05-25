@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "PermutateStrings",
+      "request": "launch",
+      "mainClass": "arrays.PermutateStrings",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "longrepchar",
       "request": "launch",
       "mainClass": "arrays.longrepchar",
