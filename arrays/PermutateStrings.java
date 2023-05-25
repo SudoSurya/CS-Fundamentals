@@ -38,7 +38,6 @@ public class PermutateStrings {
         return minLen == s1.length();
 
     }
-
     public static void main(String[] args) {
         boolean res = solution("ab", "ababa");
         System.out.println(res);
