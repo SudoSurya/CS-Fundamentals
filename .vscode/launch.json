@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "movezeros",
+      "request": "launch",
+      "mainClass": "arrays.twoPointers.movezeros",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "twosum",
       "request": "launch",
       "mainClass": "arrays.twoPointers.twosum",
