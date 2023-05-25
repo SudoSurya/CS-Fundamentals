@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "longrepchar",
+      "request": "launch",
+      "mainClass": "arrays.longrepchar",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "maxone2",
       "request": "launch",
       "mainClass": "arrays.maxone2",
