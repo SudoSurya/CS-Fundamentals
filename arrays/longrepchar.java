@@ -30,6 +30,7 @@ public class longrepchar {
         String str = "AABABBA";
         int result = solution(str.toCharArray(), 1);
         System.out.println(result);
+        System.out.println(result);
     }
 
 }
