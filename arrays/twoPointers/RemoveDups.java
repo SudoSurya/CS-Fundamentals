@@ -7,25 +7,27 @@ public class RemoveDups {
         if (n < 2)
             return n;
 
-        int R = 1, L = 0;
+        int R = 1, L = 0, counter = 0;
         // 1 2 3 4 3 4
-        //              ^ 
-        //          ^
+        // ^
+        // ^
         while (R < n) {
             if (nums[L] != nums[R]) {
                 L++;
                 nums[L] = nums[R];
+                counter = 0;
+            } else if (nums[L] == nums[R] && counter < 1) {
+                counter++;
+                nums[++L] = nums[R];
             }
             R++;
         }
         return L + 1;
-
     }
 
     public static void main(String[] args) {
-        int nums[] = {1,1,2,3,4,5,6};
+        int nums[] = { 1, 1, 1, 2, 3, 4, 5, 6 };
         int result = solution(nums);
         System.out.println(result);
     }
-
 }
