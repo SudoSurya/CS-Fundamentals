@@ -3,6 +3,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "containerwithmostwater",
+      "request": "launch",
+      "mainClass": "arrays.twoPointers.containerwithmostwater",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
+      "name": "RemoveDups",
+      "request": "launch",
+      "mainClass": "arrays.twoPointers.RemoveDups",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
+      "name": "movezeros",
+      "request": "launch",
+      "mainClass": "arrays.twoPointers.movezeros",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
+      "name": "twosum",
+      "request": "launch",
+      "mainClass": "arrays.twoPointers.twosum",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
+      "name": "PermutateStrings",
+      "request": "launch",
+      "mainClass": "arrays.PermutateStrings",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "longrepchar",
       "request": "launch",
       "mainClass": "arrays.longrepchar",
