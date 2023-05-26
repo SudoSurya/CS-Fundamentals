@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "RemoveDups",
+      "request": "launch",
+      "mainClass": "arrays.twoPointers.RemoveDups",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "movezeros",
       "request": "launch",
       "mainClass": "arrays.twoPointers.movezeros",
