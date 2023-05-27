@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "SortedTwoSum",
+      "request": "launch",
+      "mainClass": "arrays.twoPointers.SortedTwoSum",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "isSequence",
       "request": "launch",
       "mainClass": "arrays.twoPointers.isSequence",
