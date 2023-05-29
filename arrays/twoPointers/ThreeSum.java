@@ -5,6 +5,31 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ThreeSum {
+    static int ThreeSumSolution(int nums[], int target) {
+        List<List<Integer>> res = new LinkedList<>();
+        int n = nums.length;
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length; i++) {
+            int L = i + 1, R = n - 1;
+            while (L < R) {
+                int curSum = nums[L] + nums[R] + nums[i];
+                if (curSum < target) {
+                    List<Integer> Sub = new LinkedList<>();
+                    Sub.add(nums[L]);
+                    Sub.add(nums[R]);
+                    Sub.add(nums[i]);
+                    res.add(Sub);
+                    L++;
+                } else {
+                    R--;
+                }
+            }
+        }
+        System.out.println(res);
+        return res.size() * 2;
+    }
+
     static List<List<Integer>> ThreeSumSolution(int nums[]) {
         List<List<Integer>> res = new LinkedList<>();
         int n = nums.length;
@@ -44,8 +69,8 @@ public class ThreeSum {
     }
 
     public static void main(String[] args) {
-        int nums[]  = {-1,0,1,2,-1,-4};
-        List<List<Integer>> res = ThreeSumSolution(nums);
+        int nums[] = { -2, 0, 1, 3 };
+        int res = ThreeSumSolution(nums, 10);
         System.out.println(res);
     }
 }
