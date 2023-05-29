@@ -3,8 +3,10 @@ package arrays;
 public class PermutateStrings {
 
     static boolean solution(String s1, String s2) {
+        
         // define table
         int[] arr = new int[128];
+        
         // define pointers
         int L = 0, R = 0;
 
@@ -16,6 +18,8 @@ public class PermutateStrings {
         }
         int minLen = Integer.MAX_VALUE;
         int counter = 0;
+
+        
 
         while (R < s2_arr.length) {
             char cur = s2_arr[R];

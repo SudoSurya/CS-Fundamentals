@@ -2,7 +2,6 @@ package arrays.twoPointers;
 
 public class isSequence {
     public static boolean isSubsequence(String s, String t) {
-
         // ahbgdc **acc**
         if (t.length() < s.length()) {
             return false;
