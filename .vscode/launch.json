@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "OccureneStr",
+      "request": "launch",
+      "mainClass": "strings.OccureneStr",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "FindDiffernceStrs",
       "request": "launch",
       "mainClass": "strings.FindDiffernceStrs",
