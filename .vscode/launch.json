@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "FindDiffernceStrs",
+      "request": "launch",
+      "mainClass": "strings.FindDiffernceStrs",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "mergestr",
       "request": "launch",
       "mainClass": "strings.mergestr",
