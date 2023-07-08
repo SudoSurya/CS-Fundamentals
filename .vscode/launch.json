@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Anagram",
+      "request": "launch",
+      "mainClass": "strings.Anagram",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "OccureneStr",
       "request": "launch",
       "mainClass": "strings.OccureneStr",
