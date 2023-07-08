@@ -28,7 +28,7 @@ public class longrepchar {
 
     public static void main(String[] args) {
         String str = "AABABBA";
-        int result = solution(str.toCharArray(), 1);
+        int result = solution(str.toCharArray(), 3);
         System.out.println(result);
         System.out.println(result);
     }

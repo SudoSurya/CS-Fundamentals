@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "randomdups",
+      "request": "launch",
+      "mainClass": "arrays.randomdups",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "QuickSort",
       "request": "launch",
       "mainClass": "arrays.QuickSort",
