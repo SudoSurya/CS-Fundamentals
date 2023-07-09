@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MatrixZeros",
+      "request": "launch",
+      "mainClass": "arrays.MatrixZeros",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "Monotonic",
       "request": "launch",
       "mainClass": "arrays.Monotonic",
@@ -153,7 +160,10 @@
       "name": "ProductsNums",
       "request": "launch",
       "mainClass": "arrays.twoPointers.ProductsNums",
-      "projectName": "cs-fundmentals_afee584a"
+      "projectName": "cs-fundmentals_afee584a",
+      "noDebug": false,
+      "__progressId": "05d1c022-b413-4ca2-9956-aeb249bc2153",
+      "__origin": "internal"
     },
     {
       "type": "java",
