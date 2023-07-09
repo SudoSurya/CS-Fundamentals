@@ -3,6 +3,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Monotonic",
+      "request": "launch",
+      "mainClass": "arrays.Monotonic",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
+      "name": "ProductSign",
+      "request": "launch",
+      "mainClass": "arrays.twoPointers.ProductSign",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
+      "name": "PlusOne",
+      "request": "launch",
+      "mainClass": "arrays.twoPointers.PlusOne",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "Anagram",
       "request": "launch",
       "mainClass": "strings.Anagram",
