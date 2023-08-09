@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "LongRep",
+      "request": "launch",
+      "mainClass": "strings.LongRep",
+      "projectName": "cs-fundmentals_afee584a"
+    },
+    {
+      "type": "java",
       "name": "MatrixZeros",
       "request": "launch",
       "mainClass": "arrays.MatrixZeros",
