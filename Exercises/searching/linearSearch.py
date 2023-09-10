@@ -8,10 +8,8 @@ def linear_search(arr,needle):
     for i in range(len(arr)):
         if arr[i] == needle:
             return i
-        elif arr[i] > needle:
-            break
     return -1
 arr = [1,1,2,4,3]
-needle = 100
+needle = 3
 print(linear_search(arr,needle))
 print(is_sorted(arr))
