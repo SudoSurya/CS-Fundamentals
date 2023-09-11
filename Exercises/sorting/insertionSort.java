@@ -1,5 +1,5 @@
 
-public class insertionSort {
+class insertionSort {
 
     static int insertion(int[] arr){
 
