@@ -16,7 +16,7 @@ public class selectionSort {
         }
     }
 
-    static void swap(int[] arr, int i, int j) {
+    private static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
@@ -25,9 +25,6 @@ public class selectionSort {
     public static void main(String[] args) {
         int arr[] = { 5, 4, 3, 2, 1 };
         SelectionSort(arr);
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
 
     }
 }
