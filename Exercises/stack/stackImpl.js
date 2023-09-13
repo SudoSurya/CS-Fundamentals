@@ -19,5 +19,5 @@ class stack {
     peek() {
         return this.items[this.items.length - 1];
     }
-
 }
+
