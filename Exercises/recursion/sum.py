@@ -11,4 +11,4 @@ def number_of_paths(n):
         return 1
     return number_of_paths(n-1) + number_of_paths(n-2) + number_of_paths(n-3)
 print(number_of_paths(3))
-##print(sum([1,2,3]))
+print(sum([1,2,3]))
