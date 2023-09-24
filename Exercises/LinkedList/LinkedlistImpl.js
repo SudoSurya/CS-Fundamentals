@@ -29,6 +29,24 @@ class LinkedList {
         }
         return -1;
     }
+    insertAtIndex(index, value) {
+        let newNode = new Node(value)
+
+        if (index === 0) {
+            newNode.next = this.head;
+            this.head = newNode;
+            return;
+        }
+        let current = this.head;
+        let currentIndex = 0;
+
+        while (currentIndex < index - 1) {
+            current = current.next;
+            currentIndex++;
+        }
+        newNode.next = current.next;
+        current.next = newNode;
+    }
 }
 
 
