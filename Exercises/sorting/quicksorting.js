@@ -45,5 +45,5 @@ function partition(arr, left, right) {
 let arr = [5, 4, 3, 2, 1];
 console.log(arr);
 qs(arr, 0, arr.length - 1);
-console.log(quickSelect(arr, 0, arr.length - 1, 1));
+console.log(quickSelect(arr, 0, arr.length - 1, 0));
 console.log(arr);
