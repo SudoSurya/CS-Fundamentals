@@ -7,6 +7,20 @@ function qs(arr, left, right) {
     qs(arr, left, partitionIdx - 1);
     qs(arr, partitionIdx + 1, right);
 }
+function quickSelect(arr, left, right, k) {
+    if (right - left <= 0) {
+        return arr[left];
+    }
+
+    let partitionIdx = partition(arr, left, right);
+    if (partitionIdx === k) {
+        return arr[partitionIdx];
+    } else if (partitionIdx > k) {
+        return quickSelect(arr, left, partitionIdx - 1, k);
+    } else {
+        return quickSelect(arr, partitionIdx + 1, right, k);
+    }
+}
 
 function partition(arr, left, right) {
     let pivot = arr[right];
@@ -31,4 +45,5 @@ function partition(arr, left, right) {
 let arr = [5, 4, 3, 2, 1];
 console.log(arr);
 qs(arr, 0, arr.length - 1);
+console.log(quickSelect(arr, 0, arr.length - 1, 1));
 console.log(arr);
