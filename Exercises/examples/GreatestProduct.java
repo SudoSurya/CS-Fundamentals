@@ -27,7 +27,23 @@ public class GreatestProduct {
 
         int pivot = partition(arr, left, right);
 
-        if()
+        if (right - pivot == 2) {
+            int sum1 = 1;
+            for (int i = pivot; i < pivot + 3; i++) {
+                sum1 *= arr[i];
+            }
+        } else if (right - pivot == 1) {
+            int sum1 = 1;
+            for (int i = pivot; i < pivot + 2; i++) {
+                sum1 *= arr[i];
+            }
+        } else if (right - pivot == 0) {
+            int sum1 = 1;
+            for (int i = pivot; i < pivot + 1; i++) {
+                sum1 *= arr[i];
+            }
+        } else {
+        }
     }
 
     public static void main(String[] args) {
