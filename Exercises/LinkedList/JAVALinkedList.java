@@ -29,6 +29,20 @@ public class JAVALinkedList {
         return current.data;
     }
 
+    public void deleteNode(int index) {
+        if (index == 0) {
+            this.head = this.head.next;
+            return;
+        }
+        Node current = this.head;
+        let currentIndex = 0;
+        while (currentIndex < index - 1) {
+            current = current.next;
+            currentIndex++;
+        }
+        Node nextNode = current.next.next;
+        current.next = nextNode;
+    }
 
     public static void main(String[] args) {
         JAVALinkedList list = new JAVALinkedList(null);
