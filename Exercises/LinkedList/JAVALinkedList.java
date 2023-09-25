@@ -16,7 +16,7 @@ public class JAVALinkedList {
     }
 
     public int Read(int index) {
-        Node current = this.head;
+        Node current = head;
         int currentIndex = 0;
 
         while (currentIndex < index) {
@@ -35,7 +35,7 @@ public class JAVALinkedList {
             return;
         }
         Node current = this.head;
-        let currentIndex = 0;
+        int currentIndex = 0;
         while (currentIndex < index - 1) {
             current = current.next;
             currentIndex++;
@@ -53,7 +53,7 @@ public class JAVALinkedList {
         list.head.next = second;
         second.next = third;
 
-        System.out.println(list.Read(10));
+        System.out.println(list.Read(1));
 
     }
 }
