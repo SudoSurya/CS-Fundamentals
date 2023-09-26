@@ -12,4 +12,10 @@ int main() {
   char esc = e;
   char res = tolower(res);
   printf("%c\n", esc);
+
+  int n = n & 0177;
+  printf("%d\n", n);
 }
+
+
+// Path: fundamentals.c
