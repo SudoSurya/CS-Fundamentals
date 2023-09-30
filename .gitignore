@@ -3,3 +3,5 @@
 __pycache__
 *__pycache__
 *.out*
+a.out
+*a.out
