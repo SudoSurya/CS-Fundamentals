@@ -35,6 +35,13 @@ int main() {
   }
   printf("lower - EXP%6c\n", lowerExp('A'));
   printf("lower %6c\n", lower('A'));
+  // int c = getchar();
+  // printf("getchar %6c\n", c);
+  char c;
+  while (c = getchar()) {
+    printf("getchar %6c\n", c);
+    if (c == 'q')
+      break;
+  }
 }
-
 // Path: fundamentals.c
