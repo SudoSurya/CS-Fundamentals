@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            width: 30%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .task {
+            padding: 10px;
+            margin: 5px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .task.dragging {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task Management App</h1>
+    <div class="container">
+        <div class="column" id="tasks" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Tasks</h2>
+            <input type="text" id="newTask" placeholder="Add a task">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <div class="column" id="progress" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>In Progress</h2>
+        </div>
+        <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Done</h2>
+        </div>
+    </div>
+
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const taskId = event.dataTransfer.getData("text");
+            const targetColumn = event.target;
+            targetColumn.appendChild(document.getElementById(taskId));
+        }
+
+        function addTask() {
+            const taskText = document.getElementById("newTask").value;
+            if (taskText.trim() === "") {
+                return;
+            }
+            const task = document.createElement("div");
+            task.className = "task";
+            task.draggable = true;
+            task.id = "task" + Date.now(); // Unique ID for each task
+            task.textContent = taskText;
+            task.addEventListener("dragstart", drag);
+
+            const tasksColumn = document.getElementById("tasks");
+            tasksColumn.appendChild(task);
+
+            // Clear the input field
+            document.getElementById("newTask").value = "";
+        }
+    </script>
+</body>
+</html>
