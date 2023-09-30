@@ -30,5 +30,5 @@ def partition(arr,left,right):
 
     return left
 
-arr = [5,4,3,2,1]
+arr = [1,2,31,21,1]
 print(quickselect(arr,0,len(arr),len(arr)-2))
