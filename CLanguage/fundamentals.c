@@ -6,6 +6,7 @@ int lower(int c) {
   else
     return c;
 }
+int lowerExp(int c) { return c >= 'A' && c <= 'Z' ? c + 'a' - 'A' : c; }
 int power(int base, int n) {
   int p;
   for (p = 1; n > 0; --n)
@@ -32,6 +33,8 @@ int main() {
   for (int i = 1; i <= 100; i++) {
     printf("%5d%c", i, (i % 10 == 0 || i == n - 1) ? '\n' : ' ');
   }
+  printf("lower - EXP%6c\n", lowerExp('A'));
+  printf("lower %6c\n", lower('A'));
 }
 
 // Path: fundamentals.c
