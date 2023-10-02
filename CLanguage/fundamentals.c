@@ -57,6 +57,7 @@ int main() {
   int len = strlen(s);
   printf("len of s %d\n", len);
   printf("size of s %ld\n", sizeof(s));
+  int size = sizeof(s);
   // for (int i = 0; i < len; i++) {
   //   printf("%c", s[i]);
   // }
