@@ -6,8 +6,10 @@ import java.util.HashMap;
  * maps
  */
 public class maps {
+    public static int whocares = 10;
 
     public static int LongSubStr(char args[]) {
+        whocares = 100;
         int n = args.length;
         if (n < 2)
             return n;
