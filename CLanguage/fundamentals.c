@@ -1,3 +1,4 @@
+#include "functions.c"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -66,6 +67,9 @@ int main() {
   reverse(s);
   printf("after reverse - %6s\n", s);
 
+  int who = whocare(1);
+
+  printf("who %d\n", who);
   // printf("\n");
   // for (int i = 0; i < len; i++) {
   //   printf("%c", s[i]);
