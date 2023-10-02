@@ -1,5 +1,15 @@
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void reverse(char s[]) {
+  int c, i, j;
+  for (i = 0, j = strlen(s) - 1; i < j; i++, j--) {
+    c = s[i];
+    s[i] = s[j];
+    s[j] = c;
+  }
+}
 int lower(int c) {
   if (c >= 'A' && c <= 'Z')
     return c + 'a' - 'A';
@@ -15,7 +25,6 @@ int power(int base, int n) {
 }
 int main() {
   int e = lower('A');
-
   char esc = e;
   char res = tolower(res);
 
@@ -38,10 +47,27 @@ int main() {
   // int c = getchar();
   // printf("getchar %6c\n", c);
   char c;
-  while (c = getchar()) {
+  /* while (c = getchar()) {
     printf("getchar %6c\n", c);
     if (c == 'q')
       break;
-  }
+  } */
+
+  char s[] = "hello";
+  int len = strlen(s);
+  printf("len of s %d\n", len);
+  printf("size of s %ld\n", sizeof(s));
+  // for (int i = 0; i < len; i++) {
+  //   printf("%c", s[i]);
+  // }
+  // printf("\n");
+  printf("before reverse - %6s\n", s);
+  reverse(s);
+  printf("after reverse - %6s\n", s);
+
+  // printf("\n");
+  // for (int i = 0; i < len; i++) {
+  //   printf("%c", s[i]);
+  // }
 }
 // Path: fundamentals.c
