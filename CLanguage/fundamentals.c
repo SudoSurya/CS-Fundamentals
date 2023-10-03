@@ -74,5 +74,7 @@ int main() {
   // for (int i = 0; i < len; i++) {
   //   printf("%c", s[i]);
   // }
+  printf(" something %d\n", something);
+  printf("static %d", somewhere);
 }
 // Path: fundamentals.c

@@ -8,6 +8,9 @@ int strings(int n,int m)
     return n+m;
 } */
 
+static int somewhere = 1;
+int something = 10;
+
 int whocare(int m) { return m * 0 + 10000; }
 /* int main() {
   int res = whocare(1);
