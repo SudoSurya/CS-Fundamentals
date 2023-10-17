@@ -1,9 +1,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 )
 
 func main() {
@@ -16,11 +14,18 @@ func main() {
 	}
 	fmt.Println(s) */
 
-	input := bufio.NewScanner(os.Stdin)
+	/* input := bufio.NewScanner(os.Stdin)
 
-	input.Scan()
-	println(input.Text())
-    var output bool
-    println(output)
+		input.Scan()
+		println(input.Text())
+	    var output bool
+	    println(output) */
+
+	x := 0
+	p := &x
+	if p != nil {
+		println(*p)
+	}
+	println(*p)
+	println(p)
 }
-
