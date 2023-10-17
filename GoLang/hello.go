@@ -7,12 +7,12 @@ import (
 func main() {
 	fmt.Println("Hello, World!")
 
-	/* s, sep := "", ""
-	for _, arg := range os.Args[1:] {
-		s += sep + arg
-		sep = " "
-	}
-	fmt.Println(s) */
+	// s, sep := "", ""
+	// for& _, arg := range os.Args[1:] {
+	// 	s += sep + arg
+	// 	sep = " "
+	// }
+	// fmt.Println(s)
 
 	/* input := bufio.NewScanner(os.Stdin)
 
@@ -23,9 +23,17 @@ func main() {
 
 	x := 0
 	p := &x
-	if p != nil {
-		println(*p)
-	}
-	println(*p)
-	println(p)
+	// if &p != nil {
+	// 	println(*p)
+	// }
+	// println(p)
+
+	v := increment(p)
+	println(v)
+	println(x)
+}
+
+func increment(inc *int) int {
+	*inc++
+	return *inc
 }
