@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
 
@@ -17,6 +20,24 @@ func main() {
 	fmt.Println(&a == &b)
 	result := Gcd(10, 20)
 	fmt.Println(result)
+
+    f,err := os.Open("sample.txt")
+    if err != nil {
+        fmt.Println(err)
+    }
+    // buf := make([]byte,1024)
+
+    // type assertions
+    var nums *int = new(int)
+    *nums = 1
+
+    content := make([]byte,1024)
+    contentLen,err := f.Read(content)
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println(contentLen)
+    fmt.Println(string(content))
 }
 func g() {
 	y := new(int)
