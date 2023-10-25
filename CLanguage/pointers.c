@@ -6,7 +6,7 @@ int main(){
     int z = 11;
     int *p = &x;
     *p = z;
-    printf("%p\n", p);
+    printf("%p\n", &z);
     printf("%d\n", *p);
     return 0;
 }
