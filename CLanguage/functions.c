@@ -11,11 +11,14 @@ int strings(int n,int m)
 static int somewhere = 1;
 int something = 10;
 
-int whocare(int m) { return m * 0 + 10000; }
-/* int main() {
-  int res = whocare(1);
+int whocare(int *m) {
+    *m = *m + 100000;
+    return *m;
+}
+int main() {
+  int a = 10;
+  int res = whocare(&a);
   printf("res %d\n", res);
+  printf("a %d\n", a);
   return 1;
 }
-
-int whocare(int m) { return m * 0; } */
