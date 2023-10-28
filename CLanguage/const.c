@@ -9,6 +9,7 @@ int main() {
   for (int i = 0; i < 6; i++) {
     printf("%d\n", i);
   }
+  printf("%d\n", a);
 }
 
 // Path: const.c
