@@ -10,6 +10,7 @@ int main() {
     printf("%d\n", i);
   }
   printf("%d\n", a);
+  printf("%d\n", a);
 }
 
 // Path: const.c
