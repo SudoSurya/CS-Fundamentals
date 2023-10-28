@@ -39,10 +39,12 @@ func main() {
 	}
 	fmt.Println(contentLen)
 	fmt.Println(string(content))
+
 }
 func g() {
 	y := new(int)
 	*y = 1
+    fmt.Println(y)
 	// y doesnt escape from g so it is allocated on the stack
 }
 
