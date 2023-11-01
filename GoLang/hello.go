@@ -19,13 +19,13 @@ func main() {
 	}
 
 	z := new(int)
-    fmt.Println("ss",&z)
+	fmt.Println("ss", &z)
 	pop := new(int)
-    fmt.Println("ss",&pop)
+	fmt.Println("ss", &pop)
 	foo := new(int)
-    fmt.Println("ss",&foo)
+	fmt.Println("ss", &foo)
 	bar := new(int)
-    fmt.Println("ss",&bar)
+	fmt.Println("ss", &bar)
 
 	// s, sep := "", ""
 	// for& _, arg := range os.Args[1:] {
@@ -51,6 +51,16 @@ func main() {
 	v := increment(p)
 	println(v)
 	println(x)
+	var str strings.Builder = strings.Builder{}
+	str.WriteString("hello")
+	var lens int = str.Len()
+	var ui uint8 = 1
+	fmt.Println(ui)
+	println(lens)
+	medals := []string{"gold", "silver", "bronze"}
+	for i := len(medals) - 1; i >= 0; i-- {
+		fmt.Println(medals[i]) // "bronze", "silver", "gold"
+	}
 }
 
 func increment(inc *int) int {

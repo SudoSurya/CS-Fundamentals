@@ -14,12 +14,12 @@ type Fahrenheit float64
 var cwd string
 
 func init() {
-    var err error
+	var err error
 	cwd, err = os.Getwd() // NOTE: wrong!
 	if err != nil {
 		log.Fatalf("os.Getwd failed: %v", err)
 	}
-	log.Printf("Working directory = %s", cwd)
+	log.Printf("Working directory = %s", cwd) //ERROR
 }
 func main() {
 	var a Celsius = 1.0
@@ -30,4 +30,8 @@ func main() {
 		x := x + 'a' - 'A'
 		fmt.Printf("%c", x)
 	}
+	var apples int32 = 1
+	var oranges int16 = 2
+    con := int(apples) + int(oranges)
+    fmt.Println(con)
 }
