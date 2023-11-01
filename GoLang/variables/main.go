@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"unicode"
 )
 
 func main() {
@@ -53,7 +54,9 @@ func main() {
     -v  print verbose logs:w
     `
     fmt.Println(usage)
+    unicode.IsDigit('1')
 }
+
 func g() {
 	y := new(int)
 	*y = 1
