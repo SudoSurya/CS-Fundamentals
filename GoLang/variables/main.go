@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"path"
 	"unicode"
 )
 
@@ -47,14 +48,13 @@ func main() {
 	fmt.Println("Hello, playground\a\n  new line content")
 	raw := `Hello, playground\n new line content`
 	fmt.Println(raw)
-	const usage = `usage: gopl [options]
-    -n  int
-    -cpuprofile string
-    -memprofile string
-    -v  print verbose logs:w
-    `
-    fmt.Println(usage)
-    unicode.IsDigit('1')
+	var bl = unicode.IsDigit('1')
+	println(bl)
+	fmt.Println("rune", string(0x4eac))
+	fmt.Println("rune", string(0x4eac))
+	fmt.Println(basename("a/b/c.go"))
+	mi := basename("/home/kurama/Documents/Personal-Projects/CS-Fundamentals/GoLang/variables/main.go")
+	fmt.Println(mi)
 }
 
 func g() {
@@ -69,4 +69,21 @@ func Gcd(x, y int) int {
 		x, y = y, x%y
 	}
 	return x
+}
+func basename(s string) string {
+	// Discard last '/' and everything before.
+	for i := len(s) - 1; i >= 0; i-- {
+		if s[i] == '/' {
+			s = s[i+1:]
+			break
+		}
+	}
+	// Preserve everything before last '.'.
+	for i := len(s) - 1; i >= 0; i-- {
+		if s[i] == '.' {
+			s = s[:i]
+			break
+		}
+	}
+	return s
 }
