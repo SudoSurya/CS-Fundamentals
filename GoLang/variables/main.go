@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
-	"path"
 	"unicode"
 )
 
@@ -55,6 +55,12 @@ func main() {
 	fmt.Println(basename("a/b/c.go"))
 	mi := basename("/home/kurama/Documents/Personal-Projects/CS-Fundamentals/GoLang/variables/main.go")
 	fmt.Println(mi)
+	fmt.Println("pal", isPalindrome(121))
+	var num int = 121
+	var rev int = 121
+	if num == rev {
+		fmt.Println("true")
+	}
 }
 
 func g() {
@@ -86,4 +92,41 @@ func basename(s string) string {
 		}
 	}
 	return s
+}
+
+func reverse(num int) int {
+	// if num = -123
+	// rev =  -321
+	var rev, rem int
+	if num < 0 {
+		rev = -1 * reverse(-num)
+	}
+
+	for num != 0 {
+		rem = num % 10
+		rev = rev*10 + rem
+		num /= 10
+	}
+
+	if rev > math.MaxInt32 || rev < math.MinInt32 {
+		return 0
+	}
+	return 0
+}
+func reverse2(num, rev, rem int) int {
+	for num != 0 {
+		rem = num % 10
+		rev = rev*10 + rem
+		num /= 10
+	}
+	return rev
+}
+func isPalindrome(num int) bool {
+	var rev, rem int
+	if num < 0 {
+		return false
+	} else {
+		rev = reverse2(num, rev, rem)
+	}
+	return rev == num
 }
