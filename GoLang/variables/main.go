@@ -3,12 +3,12 @@ package main
 import (
 	"fmt"
 	"math"
-	"os"
-	"unicode"
+	// "os"
+	// "unicode"
 )
 
 func main() {
-
+/*
 	var p = new(int)
 	fmt.Println(*p)
 	var foo = new(int)
@@ -60,7 +60,7 @@ func main() {
 	var rev int = 121
 	if num == rev {
 		fmt.Println("true")
-	}
+	} */
 }
 
 func g() {
