@@ -10,8 +10,6 @@ type Employee struct {
 	Position string
 }
 
-func main() {
-}
 func Swapable() {
 
 	var dilbert Employee
@@ -24,4 +22,11 @@ func Swapable() {
 	var employeeOfTheMonth *Employee = &dilbert
 	employeeOfTheMonth.Position += " (proactive team player)"
 	fmt.Println(dilbert)
+    fmt.Println("Position",EmployeeById(dilbert.Id).Address,"why")
 }
+
+func EmployeeById(id int) *Employee {
+    return &Employee{Id: id}
+}
+
+

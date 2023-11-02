@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 
+	"github.com/20pa5a1210/cs-fundamentals/github"
 	"github.com/20pa5a1210/cs-fundamentals/structs"
 )
 
@@ -61,7 +62,7 @@ func main() {
 	} else {
 		fmt.Println("not nil")
 	}
-    // NOTE: slice is a reference type
+	// NOTE: slice is a reference type
 	ages := make(map[string]int)
 	ages["alice"] = 31
 	ages["charlie"]++
@@ -71,34 +72,45 @@ func main() {
 	ages["charlie"]++
 	ages["charlie"]++
 	ages["charlie"]++
-    fmt.Println(ages["charlie"])
+	fmt.Println(ages["charlie"])
 	fmt.Println("------------------------------")
 	newAges := map[string]int{
 		"alice":   31,
 		"charlie": 34,
 		"bob":     20,
 	}
-    for name, age := range newAges {
-        fmt.Printf("%s\t%d\n", name, age)
-    }
+	for name, age := range newAges {
+		fmt.Printf("%s\t%d\n", name, age)
+	}
 	fmt.Println("------------------------------")
-    var names []string
-    for name := range newAges {
-        names = append(names, name)
-    }
-    sort.Strings(names)
-    for _, name := range names {
-        fmt.Printf("%s\t%d\n", name, newAges[name])
-    }
+	var names []string
+	for name := range newAges {
+		names = append(names, name)
+	}
+	sort.Strings(names)
+	for _, name := range names {
+		fmt.Printf("%s\t%d\n", name, newAges[name])
+	}
 	fmt.Println("------------------------------")
 
-    var ages1 = make([]string,0,len(newAges))
-    fmt.Println(cap(ages1))
-    fmt.Println(len(ages1))
+	var ages1 = make([]string, 0, len(newAges))
+	fmt.Println(cap(ages1))
+	fmt.Println(len(ages1))
 
 	fmt.Println("----------- Structs -------------------")
-    structs.Swapable()
+	structs.Swapable()
 	fmt.Println("------------------------------")
+	fmt.Println("----------- Github Issue JSON------------------")
+	input := []string{"repo:golang/go", "is:open", "json decoder"}
+	result, err := github.SearchIssues(input)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Printf("%d issues:\n", result.TotalCount)
+	for _, item := range result.Items {
+		fmt.Printf("#%-5d %9.9s %.55s\n", item.Number, item.User.Login, item.Title)
+	}
 }
 
 func equal(x, y []int) bool {
@@ -114,18 +126,18 @@ func equal(x, y []int) bool {
 }
 func missingNumber(nums []int) int {
 
-    /* sort.Ints(nums)
-    for i := 0; i < len(nums); i++ {
-        if nums[i] != i {
-            return i
-        }
-    }
+	/* sort.Ints(nums)
+	   for i := 0; i < len(nums); i++ {
+	       if nums[i] != i {
+	           return i
+	       }
+	   }
 
-    return len(nums) */
-    // sum of n consecutive numbers = n * (n + 1) / 2
-    var sum int = len(nums) * (len(nums) + 1) / 2
-    for _, v := range nums {
-        sum -= v
-    }
-    return sum
+	   return len(nums) */
+	// sum of n consecutive numbers = n * (n + 1) / 2
+	var sum int = len(nums) * (len(nums) + 1) / 2
+	for _, v := range nums {
+		sum -= v
+	}
+	return sum
 }
