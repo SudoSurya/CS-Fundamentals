@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"sort"
+
+	"github.com/20pa5a1210/cs-fundamentals/structs"
 )
 
 type Currency int
@@ -93,6 +95,10 @@ func main() {
     var ages1 = make([]string,0,len(newAges))
     fmt.Println(cap(ages1))
     fmt.Println(len(ages1))
+
+	fmt.Println("----------- Structs -------------------")
+    structs.Swapable()
+	fmt.Println("------------------------------")
 }
 
 func equal(x, y []int) bool {
