@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 type Currency int
@@ -79,7 +80,19 @@ func main() {
         fmt.Printf("%s\t%d\n", name, age)
     }
 	fmt.Println("------------------------------")
-    delete(newAges, "bob")
+    var names []string
+    for name := range newAges {
+        names = append(names, name)
+    }
+    sort.Strings(names)
+    for _, name := range names {
+        fmt.Printf("%s\t%d\n", name, newAges[name])
+    }
+	fmt.Println("------------------------------")
+
+    var ages1 = make([]string,0,len(newAges))
+    fmt.Println(cap(ages1))
+    fmt.Println(len(ages1))
 }
 
 func equal(x, y []int) bool {
@@ -92,4 +105,21 @@ func equal(x, y []int) bool {
 		}
 	}
 	return true
+}
+func missingNumber(nums []int) int {
+
+    /* sort.Ints(nums)
+    for i := 0; i < len(nums); i++ {
+        if nums[i] != i {
+            return i
+        }
+    }
+
+    return len(nums) */
+    // sum of n consecutive numbers = n * (n + 1) / 2
+    var sum int = len(nums) * (len(nums) + 1) / 2
+    for _, v := range nums {
+        sum -= v
+    }
+    return sum
 }
