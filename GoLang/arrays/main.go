@@ -224,3 +224,22 @@ func swap(a *int, b *int){
     *a, *b = *b, *a
 }
 
+
+func majorityElement(nums []int) int {
+
+    var count, candidate int = 0, 0
+
+    // 2 2 1 1 1 2 2 1 2
+    for _, v := range nums {
+        if count == 0 {
+            candidate = v
+        }
+        if candidate == v {
+            count++
+        } else {
+            count--
+        }
+    }
+    return candidate
+
+}
