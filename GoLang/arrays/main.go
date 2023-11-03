@@ -163,3 +163,64 @@ func missingNumber(nums []int) int {
 	}
 	return sum
 }
+
+func reverseArrayq(nums []int, start int, end int) {
+	for start < end {
+		var temp int = nums[start]
+		nums[start] = nums[end]
+		nums[end] = temp
+		start++
+		end--
+	}
+}
+
+func singleNumber(nums []int) int {
+	distMap := map[int]int{}
+
+	for _, v := range nums {
+		distMap[v]++
+	}
+
+	for k, v := range distMap {
+		if v == 1 {
+			return k
+		}
+	}
+	return 0
+}
+func twoSum(nums []int, target int) []int {
+	var SumMap = map[int]int{}
+
+    for i:=0; i<len(nums);i++{
+        var complement int = target - nums[i]
+        if j, ok := SumMap[complement]; ok {
+            return []int{j, i}
+        }
+        SumMap[nums[i]] = i
+    }
+    return []int{}
+}
+
+func sortcolors(nums []int){
+
+    var red, white, blue int = 0, 0, len(nums)-1
+
+    for white <= blue {
+        if nums[white] == 0{
+            swap(&nums[white], &nums[red])
+            white++
+            red++
+        } else if nums[white] == 1{
+            white++
+        } else {
+            swap(&nums[white], &nums[blue])
+            blue--
+        }
+    }
+
+}
+
+func swap(a *int, b *int){
+    *a, *b = *b, *a
+}
+
