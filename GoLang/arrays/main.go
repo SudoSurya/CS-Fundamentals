@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"log"
+	"math"
 	"os"
 	"sort"
 	"time"
@@ -191,55 +192,81 @@ func singleNumber(nums []int) int {
 func twoSum(nums []int, target int) []int {
 	var SumMap = map[int]int{}
 
-    for i:=0; i<len(nums);i++{
-        var complement int = target - nums[i]
-        if j, ok := SumMap[complement]; ok {
-            return []int{j, i}
-        }
-        SumMap[nums[i]] = i
-    }
-    return []int{}
+	for i := 0; i < len(nums); i++ {
+		var complement int = target - nums[i]
+		if j, ok := SumMap[complement]; ok {
+			return []int{j, i}
+		}
+		SumMap[nums[i]] = i
+	}
+	return []int{}
 }
 
-func sortcolors(nums []int){
+func sortcolors(nums []int) {
 
-    var red, white, blue int = 0, 0, len(nums)-1
+	var red, white, blue int = 0, 0, len(nums) - 1
 
-    for white <= blue {
-        if nums[white] == 0{
-            swap(&nums[white], &nums[red])
-            white++
-            red++
-        } else if nums[white] == 1{
-            white++
-        } else {
-            swap(&nums[white], &nums[blue])
-            blue--
-        }
-    }
+	for white <= blue {
+		if nums[white] == 0 {
+			swap(&nums[white], &nums[red])
+			white++
+			red++
+		} else if nums[white] == 1 {
+			white++
+		} else {
+			swap(&nums[white], &nums[blue])
+			blue--
+		}
+	}
 
 }
 
-func swap(a *int, b *int){
-    *a, *b = *b, *a
+func swap(a *int, b *int) {
+	*a, *b = *b, *a
 }
-
 
 func majorityElement(nums []int) int {
 
-    var count, candidate int = 0, 0
+	var count, candidate int = 0, 0
 
-    // 2 2 1 1 1 2 2 1 2
-    for _, v := range nums {
-        if count == 0 {
-            candidate = v
-        }
-        if candidate == v {
-            count++
-        } else {
-            count--
-        }
-    }
-    return candidate
+	// 2 2 1 1 1 2 2 1 2
+	for _, v := range nums {
+		if count == 0 {
+			candidate = v
+		}
+		if candidate == v {
+			count++
+		} else {
+			count--
+		}
+	}
+	return candidate
+}
+func maxSubArray(nums []int) int {
+	var maxSum, curSum int = math.MinInt, 0
+	// [-2,1,-3,4,-1,2,1,-5,4
+	for _, v := range nums {
+		if curSum < 0 {
+			curSum = 0
+		}
+		curSum += v
+		maxSum = max(curSum, maxSum)
+	}
 
+	return maxSum
+}
+
+// buy and sell stock
+func maxProfit(prices []int) int {
+
+	var maxProfit, minPrice int = 0, math.MaxInt
+	// [7,1,5,3,6,4]
+	for _, v := range prices {
+		if v < minPrice {
+			minPrice = v
+		} else if v-minPrice > maxProfit {
+			maxProfit = v - minPrice
+		}
+	}
+	return maxProfit
 }
