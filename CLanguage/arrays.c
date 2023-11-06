@@ -18,9 +18,6 @@ void ere() {
     for (int i = 0; arr[i] != '\0'; i++) {
         printf("arr[%d] = %d\n", i, arr[i]);
     }
-    char *pmsg;
-    pmsg = "now is the time";
-    strcpy(pmsg, "now is the time");
 }
 
 
