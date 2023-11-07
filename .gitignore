@@ -1,5 +1,9 @@
 *.class
 
+GoLang/ErrorsPac/ErrorsPac
+GoLang/ErrorsPac/courses
+GoLang/ErrorsPac/tmp/
+GoLang/htmltempl/htmltempl
 __pycache__
 *__pycache__
 *.out*
