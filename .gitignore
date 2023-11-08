@@ -1,5 +1,6 @@
 *.class
 
+GoLang/geometry/tmp/
 GoLang/ErrorsPac/ErrorsPac
 GoLang/ErrorsPac/courses
 GoLang/ErrorsPac/tmp/
