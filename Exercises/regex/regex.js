@@ -16,7 +16,9 @@ console.log(result) */
 
 // Path: regex.js
 
-
+/**
+    *@param {string} str
+*/
 function grep(str, regex) {
     let SpittedStr = str.split("\n")
     for (let i = 0; i < SpittedStr.length; i++) {
