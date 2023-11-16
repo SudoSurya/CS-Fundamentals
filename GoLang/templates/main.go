@@ -5,7 +5,6 @@ import (
 	"math"
 	"os"
 	"text/template"
-	"time"
 )
 
 const temp = `   {{ .Name}}
@@ -58,7 +57,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-    time.Date()
 }
 
 
