@@ -26,16 +26,16 @@ func main() {
 		recordedGames := strings.Split(lineSplit[1], ";")
 		gameData[gameName] = []Game{}
 		for _, game := range recordedGames {
-			gameSplit := strings.Split(game, ",")
-			for _, indGame := range gameSplit {
+			for _, indGame := range strings.Split(game, ",") {
 				sepGame := strings.Split(indGame, " ")
-				color := sepGame[2]
 				number, err := strconv.Atoi(sepGame[1])
 				if err != nil {
 					panic(err)
 				}
-				idxGames := Games{Game{color, number}}
-				gameData[gameName] = append(gameData[gameName], idxGames...)
+				gameData[gameName] = append(
+					gameData[gameName],
+					Games{Game{sepGame[2], number}}...,
+				)
 
 			}
 		}
@@ -74,7 +74,7 @@ func CubeConudrum(gameData map[string][]Game) {
 	}
 	GameidxSum := 0
 	sumIdx(validGames, &GameidxSum)
-	fmt.Println(GameidxSum)
+    fmt.Println("part1:",GameidxSum)
 }
 
 func sumIdx(validGames []string, GameidxSum *int) {
@@ -88,27 +88,9 @@ func sumIdx(validGames []string, GameidxSum *int) {
 	}
 }
 
-func ReadInput() ([]string, error) {
-	inputByte, err := os.ReadFile("../input/01-prod.txt")
-	if err != nil {
-		return nil, err
-	}
-	inputByte = inputByte[:len(inputByte)-1]
-	inputStr := string(inputByte)
-	input := strings.Split(inputStr, "\n")
-	return input, nil
-}
-
 func CubeConudrum2(gameData map[string][]Game) {
-	// vaildCubes := map[string]int{
-	//     "red": 12,
-	//     "blue": 14,
-	//     "green": 13,
-	// }
-	validGames := []string{}
 	powerSets := 0
-	for gameName, games := range gameData {
-		isGameValid := true
+	for _, games := range gameData {
 		red, blue, green := 0, 0, 0
 		for _, game := range games {
 			switch game.color {
@@ -122,19 +104,17 @@ func CubeConudrum2(gameData map[string][]Game) {
 		}
 		powerCube := red * blue * green
 		powerSets += powerCube
-		red, blue, green = 0, 0, 0
-		if isGameValid {
-			validGames = append(validGames, gameName)
-		}
 	}
-	fmt.Println(powerSets)
-	GameidxSum := 0
-	for _, char := range validGames {
-		gameidx := char[5:]
-		gameidxInt, err := strconv.Atoi(gameidx)
-		if err != nil {
-			panic(err)
-		}
-		GameidxSum += gameidxInt
+    fmt.Println("part2:",powerSets)
+}
+
+func ReadInput() ([]string, error) {
+	inputByte, err := os.ReadFile("../input/01-prod.txt")
+	if err != nil {
+		return nil, err
 	}
+	inputByte = inputByte[:len(inputByte)-1]
+	inputStr := string(inputByte)
+	input := strings.Split(inputStr, "\n")
+	return input, nil
 }
