@@ -1,4 +1,7 @@
 *.class
+
+AdventofCode/day2/solution/tmp/
+
 AdventofCode/day1/solution/solution2.go
 AdventofCode/day1/solution/tmp/build-errors.log
 AdventofCode/day1/solution/tmp/main
