@@ -20,8 +20,9 @@ func main() {
 		numberIdxs := numberRe.FindAllStringIndex(contents[line], -1)
 		checkForMatches(macthes, line, line-1, line+1, numberIdxs, contents, &validPartNums, &sum)
 	}
-	fmt.Println("validPartNums", validPartNums)
+	// fmt.Println("validPartNums", validPartNums)
 	fmt.Println("sum", sum)
+    Part2(contents)
 }
 
 func checkForMatches(
