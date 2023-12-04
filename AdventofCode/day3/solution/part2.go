@@ -35,14 +35,16 @@ func calculateGearRatios(line int, starMatches [][]int, contents []string) int {
 func findAdjacentPartNumbers(line int, starMatch []int, contents []string) []int {
 	foundNums := []int{}
 
+    // checking previous line for adjacent part numbers
 	if line > 0 {
 		foundNums = append(foundNums, findPartNumbers(line-1, starMatch, contents)...)
 	}
 
+    // checking next line for adjacent part numbers
 	if line < len(contents)-1 {
 		foundNums = append(foundNums, findPartNumbers(line+1, starMatch, contents)...)
 	}
-
+    // checking current line for adjacent part numbers
     foundNums = append(foundNums, findPartNumbers(line, starMatch, contents)...)
 
 	return foundNums
