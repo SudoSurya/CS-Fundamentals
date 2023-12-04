@@ -69,11 +69,9 @@ func findPartNumbers(line int, starMatch []int, contents []string) []int {
 }
 
 func containsint(arr []int, str int) bool {
-	for _, s := range arr {
-		if s == str {
-			return true
-		}
-	}
+    if str >= arr[0] && str <= arr[1] {
+        return true
+    }
 	return false
 }
 
