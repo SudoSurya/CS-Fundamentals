@@ -39,24 +39,21 @@ func main() {
 			Macthes:  countCommonElements(numberRe.FindAllString(cards[0], -1), numberRe.FindAllString(cards[1], -1)),
 			Original: 1,
 		}
-        ScratchCards = append(ScratchCards, tempCard)
+		ScratchCards = append(ScratchCards, tempCard)
 	}
 
-    totalScrathCards := 0
+	totalScrathCards := 0
 	for idx, card := range ScratchCards {
 		totalScrathCards += card.Copy + card.Original
 		if card.Macthes == 0 {
 			continue
 		}
 		for i := 0; i < card.Macthes; i++ {
-			key := idx + 1 + i
-			cardCopy := ScratchCards[key]
-			cardCopy.Copy = cardCopy.Copy + (card.Copy + card.Original)
-			ScratchCards[key] = cardCopy
+			ScratchCards[idx+1+i].Copy += (card.Copy + card.Original)
 		}
 	}
-    fmt.Println("points", points)
-    fmt.Println("totalScrathCards", totalScrathCards)
+	fmt.Println("points", points)
+	fmt.Println("totalScrathCards", totalScrathCards)
 }
 func calculateDoubled(input int) int {
 	return int(math.Pow(2, float64(input-1)))
@@ -65,12 +62,10 @@ func countCommonElements(array1, array2 []string) int {
 	set := make(map[string]bool)
 	var count int
 
-	// Create a set from array1
 	for _, element := range array1 {
 		set[element] = true
 	}
 
-	// Check for common elements in array2
 	for _, element := range array2 {
 		if set[element] {
 			count++
