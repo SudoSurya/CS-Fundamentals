@@ -42,27 +42,21 @@ func main() {
         ScratchCards = append(ScratchCards, tempCard)
 	}
 
-	fmt.Println("before", ScratchCards)
-    sum := 0
+    totalScrathCards := 0
 	for idx, card := range ScratchCards {
+		totalScrathCards += card.Copy + card.Original
 		if card.Macthes == 0 {
 			continue
 		}
-		fmt.Println("idx", idx, "card", card)
 		for i := 0; i < card.Macthes; i++ {
 			key := idx + 1 + i
 			cardCopy := ScratchCards[key]
 			cardCopy.Copy = cardCopy.Copy + (card.Copy + card.Original)
 			ScratchCards[key] = cardCopy
 		}
-		fmt.Println("idx", idx, "card", card)
 	}
-	fmt.Println("after", ScratchCards)
-	for _, card := range ScratchCards {
-		sum += card.Copy + card.Original
-	}
-	fmt.Println("sum", sum)
-
+    fmt.Println("points", points)
+    fmt.Println("totalScrathCards", totalScrathCards)
 }
 func calculateDoubled(input int) int {
 	return int(math.Pow(2, float64(input-1)))
