@@ -19,30 +19,40 @@ func main() {
 		switch strings.Split(line, ":")[0] {
 		case "Time":
 			raceTimings = append(raceTimings, strings.Join(raceDetails, ""))
+			// raceTimings = append(raceTimings, raceDetails...)
 		case "Distance":
 			raceDistance = append(raceDistance, strings.Join(raceDetails, ""))
+			// raceDistance = append(raceDistance, raceDetails...)
 		}
 	}
-    fmt.Println(raceTimings)
-    fmt.Println(raceDistance)
-    wins := []int{}
+	fmt.Println(raceTimings)
+	fmt.Println(raceDistance)
+	wins := []int{}
 	for i := 0; i < len(raceTimings); i++ {
 		tempRace := ints(raceTimings[i])
-        myRace := 0
-        maxCount := []int{}
-		for tempRace > 0 {
-            currRace := tempRace * myRace
-            if currRace > ints(raceDistance[i]) {
-                maxCount = append(maxCount, myRace)
-            }
-            myRace++
-            tempRace--
+		initRace := tempRace / 2
+		myRace := 0
+		maxCount := []int{}
+		raceTime := []int{}
+		for tempRace > initRace {
+			currRace := tempRace * myRace
+			if currRace > ints(raceDistance[i]) {
+				maxCount = append(maxCount, myRace)
+				raceTime = append(raceTime, currRace)
+			}
+			myRace++
+			tempRace--
 		}
-        fmt.Println(maxCount)
-        wins = append(wins, len(maxCount))
+
+		if ints(raceTimings[i])%2 == 0 {
+            wins = append(wins, len(maxCount) + len(raceTime) + 1)
+		} else {
+            wins = append(wins, len(maxCount) + len(raceTime))
+        }
 	}
-    fmt.Println("wins",mulArr(wins))
+	fmt.Println("wins", mulArr(wins))
 }
+
 func ints(input string) int {
 	val, err := strconv.Atoi(input)
 	if err != nil {
@@ -52,13 +62,12 @@ func ints(input string) int {
 }
 
 func mulArr(input []int) int {
-    mul := 1
-    for _, val := range input {
-        mul *= val
-    }
-    return mul
+	mul := 1
+	for _, val := range input {
+		mul *= val
+	}
+	return mul
 }
-
 
 func readInput() []string {
 	inputByte, err := os.ReadFile("../input/prod")
