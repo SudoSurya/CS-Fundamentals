@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	starRe    = regexp.MustCompile(`\*`)
+	starRe = regexp.MustCompile(`\*`)
 )
 
 func Part2(contents []string) {
@@ -24,7 +24,7 @@ func calculateGearRatios(line int, starMatches [][]int, contents []string) int {
 	for i := 0; i < len(starMatches); i++ {
 		foundNums := findAdjacentPartNumbers(line, starMatches[i], contents)
 		if len(foundNums) == 2 {
-            temp := foundNums[0] * foundNums[1]
+			temp := foundNums[0] * foundNums[1]
 			mul += temp
 		}
 		fmt.Println("foundNums", foundNums)
@@ -35,17 +35,17 @@ func calculateGearRatios(line int, starMatches [][]int, contents []string) int {
 func findAdjacentPartNumbers(line int, starMatch []int, contents []string) []int {
 	foundNums := []int{}
 
-    // checking previous line for adjacent part numbers
+	// checking previous line for adjacent part numbers
 	if line > 0 {
 		foundNums = append(foundNums, findPartNumbers(line-1, starMatch, contents)...)
 	}
 
-    // checking next line for adjacent part numbers
+	// checking next line for adjacent part numbers
 	if line < len(contents)-1 {
 		foundNums = append(foundNums, findPartNumbers(line+1, starMatch, contents)...)
 	}
-    // checking current line for adjacent part numbers
-    foundNums = append(foundNums, findPartNumbers(line, starMatch, contents)...)
+	// checking current line for adjacent part numbers
+	foundNums = append(foundNums, findPartNumbers(line, starMatch, contents)...)
 
 	return foundNums
 }
@@ -69,9 +69,8 @@ func findPartNumbers(line int, starMatch []int, contents []string) []int {
 }
 
 func containsint(arr []int, str int) bool {
-    if str >= arr[0] && str <= arr[1] {
-        return true
-    }
+	if str >= arr[0] && str <= arr[1] {
+		return true
+	}
 	return false
 }
-
