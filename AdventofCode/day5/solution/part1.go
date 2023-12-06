@@ -14,10 +14,8 @@ func part1() {
 		case "seeds":
 			seedItemsArr := numberRe.FindAllString(items[0], -1)
 
-			for i := 0; i < len(seedItemsArr); i = i + 2 {
-				for j := ints(seedItemsArr[i]); j < ints(seedItemsArr[i])+ints(seedItemsArr[i+1]); j++ {
-					seedItems = append(seedItems, j)
-				}
+			for i := 0; i < len(seedItemsArr); i++ {
+				seedItems = append(seedItems, ints(seedItemsArr[i]))
 			}
 
 			fmt.Println("seedItems", seedItems)
@@ -44,6 +42,6 @@ func part1() {
 			fmt.Println("seedItems", seedItems)
 		}
 	}
-	fmt.Println("range", findMinElement(seedItems))
-
+	fmt.Println("lowestLocation", findMinElement(seedItems))
+    fmt.Println("part1 end")
 }

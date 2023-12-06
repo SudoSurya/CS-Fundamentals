@@ -21,9 +21,19 @@ func part2() {
 	fmt.Println("output", output)
 	fmt.Println("end")
 }
+func findMin(arr []int) int {
+	min := arr[0]
+	for _, value := range arr {
+		if value < min {
+			min = value
+		}
+	}
+	return min
+}
+
 func seedsToRange(seeds []int, mapRanges map[int][][]int) int {
 
-	for i := findMin(seeds); ; i+=2 {
+	for i := 0; ; i+=2 {
 		location := i
 
 		for j := len(mapRanges); j > 0; j-- {

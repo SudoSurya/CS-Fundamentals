@@ -65,7 +65,7 @@ func findMinElement(arr []int) int {
 	return min
 }
 func readInput() []string {
-	inputByte, err := os.ReadFile("../input/sample")
+	inputByte, err := os.ReadFile("../input/prod")
 	if err != nil {
 		panic(err)
 	}
