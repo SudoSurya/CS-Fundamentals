@@ -9,6 +9,7 @@ import (
 )
 
 var cardRanks = map[string]int{
+	"J": 0,
 	"2": 1,
 	"3": 2,
 	"4": 3,
@@ -18,7 +19,6 @@ var cardRanks = map[string]int{
 	"8": 7,
 	"9": 8,
 	"T": 9,
-	"J": 10,
 	"Q": 11,
 	"K": 12,
 	"A": 13,
@@ -35,28 +35,30 @@ func main() {
 	for _, line := range input {
 		card, bid := strings.Split(line, " ")[0], strings.Split(line, " ")[1]
 		tempCard := Card{cardType: card, bidValue: stringToInt(bid)}
+        fmt.Println("tempCard", tempCard)
+        fmt.Println("findCardType(card)", findCardType(card))
 		CardsMaps[findCardType(card)] = append(CardsMaps[findCardType(card)], tempCard)
 	}
 	var sortedCards []Card
 	for i := 1; i <= 7; i++ {
-        if len(CardsMaps[i]) == 0 {
-            continue
-        }
-        fmt.Println("CardsMaps[i]", CardsMaps[i])
+		if len(CardsMaps[i]) == 0 {
+			continue
+		}
+		fmt.Println("CardsMaps[i]", CardsMaps[i])
 		getSoredCards(&sortedCards, CardsMaps[i])
 	}
 	totalWinnings := 0
 	for i := 0; i < len(sortedCards); i++ {
 		fmt.Println(i+1, " { ", sortedCards[i].cardType, " , ", sortedCards[i].bidValue, " }")
-        totalWinnings += sortedCards[i].bidValue * (i+1)
+		totalWinnings += sortedCards[i].bidValue * (i + 1)
 	}
 	fmt.Println(totalWinnings)
 }
 
 func getSoredCards(sortedCards *[]Card, cards []Card) {
-    fmt.Println("unsorted cards", cards)
+	fmt.Println("unsorted cards", cards)
 	sortCards(&cards)
-    fmt.Println("sorted cards", cards)
+	fmt.Println("sorted cards", cards)
 	for i := 0; i < len(cards); i++ {
 		*sortedCards = append(*sortedCards, cards[i])
 	}
@@ -64,9 +66,9 @@ func getSoredCards(sortedCards *[]Card, cards []Card) {
 
 func compareCards(card1 Card, card2 Card) bool {
 	for i := 0; i < len(card1.cardType); i++ {
-        if cardRanks[string(card1.cardType[i])] > cardRanks[string(card2.cardType[i])] {
-            return false
-        }
+		if cardRanks[string(card1.cardType[i])] > cardRanks[string(card2.cardType[i])] {
+			return false
+		}
 		if cardRanks[string(card1.cardType[i])] < cardRanks[string(card2.cardType[i])] {
 			return true
 		}
@@ -98,9 +100,15 @@ func findCardType(card string) int {
 func getCard(card string) string {
 	// if all elements are same
 	var cardMap = make(map[string]int)
+	jCount := 0
 	for i := 0; i < len(card); i++ {
+		if card[i] == 'J' {
+			jCount++
+			continue
+		}
 		cardMap[string(card[i])]++
 	}
+    cardMap[findMaxKey(cardMap)] += jCount
 	cardType := ""
 	for _, v := range cardMap {
 		cardType += intToString(v)
@@ -132,7 +140,20 @@ func sortString(s string) string {
 	// Convert the sorted slice back to a string
 	return string(runes)
 }
+func findMaxKey(hashmap map[string]int) string {
+	var maxKey string
+	maxValue := 0
 
+	// Iterate over the hashmap to find the key with the maximum value
+	for key, value := range hashmap {
+		if value > maxValue {
+			maxKey = key
+			maxValue = value
+		}
+	}
+
+	return maxKey
+}
 func readInput() []string {
 	inputByte, err := os.ReadFile("../input/prod")
 	if err != nil {
