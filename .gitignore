@@ -1,9 +1,12 @@
 *.class
 
+CLanguage/clang.md
+CLanguage/const
 AdventofCode/day3/solution/tmp/
 AdventofCode/day4/input/samplep2
 AdventofCode/day2/solution/tmp/
-
+AdventofCode/day7/solution/tmp/
+AdventofCode/day8/solution/tmp/
 AdventofCode/day5/solution/tmp/
 AdventofCode/day6/solution/tmp/
 AdventofCode/day3/solution/tmp/
