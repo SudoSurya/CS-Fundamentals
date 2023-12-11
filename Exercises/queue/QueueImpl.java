@@ -26,7 +26,6 @@ class InnerQueueImpl {
     public int peek() {
         return queue[0];
     }
-
 }
 
 public class QueueImpl {

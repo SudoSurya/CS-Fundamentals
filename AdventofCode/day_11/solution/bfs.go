@@ -64,6 +64,44 @@ func  shortestPath(grid [][]string, source, destination [2]int) int {
 	return -1
 }
 
+func transposeBack(arr [][]int) [][]int {
+	rows := len(arr)
+	cols := len(arr[0])
+
+	// Create a new array with swapped rows and columns
+	originalArr := make([][]int, cols)
+	for j := range originalArr {
+		originalArr[j] = make([]int, rows)
+	}
+
+	// Perform the reverse transposition
+	for i := 0; i < rows; i++ {
+		for j := 0; j < cols; j++ {
+			originalArr[j][i] = arr[i][j]
+		}
+	}
+
+	return originalArr
+}
+func transposeArray(arr [][]int) [][]int {
+	rows := len(arr)
+	cols := len(arr[0])
+
+	// Create a new array with swapped rows and columns
+	transposedArr := make([][]int, cols)
+	for j := range transposedArr {
+		transposedArr[j] = make([]int, rows)
+	}
+
+	// Perform the transposition
+	for i := 0; i < rows; i++ {
+		for j := 0; j < cols; j++ {
+			transposedArr[j][i] = arr[i][j]
+		}
+	}
+
+	return transposedArr
+}
 func BFS() {
 	// Driver Code.
 	source := [2]int{0, 1}

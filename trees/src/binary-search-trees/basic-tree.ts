@@ -27,6 +27,45 @@ export class TreeNode<T>{
             }
         }
     }
+
+    delete(val: T, rootnode: Node<T>): Node<T> | undefined {
+        if (rootnode == undefined) {
+            return rootnode;
+        } else if (val < rootnode.val) {
+            rootnode.left = this.delete(val, rootnode.left as Node<T>);
+            return rootnode;
+        } else if (val > rootnode.val) {
+            rootnode.right = this.delete(val, rootnode.right as Node<T>);
+            return rootnode;
+        } else if (val === rootnode.val) {
+            if (rootnode.left == undefined) {
+                return rootnode.right;
+            } else if (rootnode.right == undefined) {
+                return rootnode.left;
+            } else {
+                rootnode.right = this.lift(rootnode.right, rootnode);
+                return rootnode;
+            }
+        }
+    }
+    lift(node: Node<T>, val: Node<T>): Node<T> {
+        if (node.left) {
+            node.left = this.lift(node.left, val);
+            return node;
+        }
+        else {
+            val.val = node.val;
+            return node.right as Node<T>;
+        }
+    }
+    traverse(node: Node<T>) {
+        if(node == undefined){
+            return;
+        }
+        this.traverse(node.left as Node<T>);
+        console.log(node.val);
+        this.traverse(node.right as Node<T>);
+    }
 }
 
 export function search<T>(val: T, rootnode: Node<T>): Node<T> | undefined {
