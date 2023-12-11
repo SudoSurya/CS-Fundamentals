@@ -11,7 +11,6 @@ type Coord struct {
 }
 
 func main() {
-
 	contents := readInput()
 	pipes := [][]string{}
 	startPos := []int{0, 0}
@@ -33,6 +32,7 @@ func main() {
 		ele := queue.Dequeue()
 		r := ele[0]
 		c := ele[1]
+
 		ch := pipes[r][c]
 		if r > 0 && isIn(ch, []string{"S", "|", "J", "L"}) && isIn(pipes[r-1][c], []string{"|", "7", "F"}) && !loop[Coord{r - 1, c}] {
 			loop[Coord{r - 1, c}] = true
@@ -52,6 +52,7 @@ func main() {
 		}
 	}
     fmt.Println(len(loop)/2)
+    part2()
 }
 
 func isIn(str string, overlap []string) bool {

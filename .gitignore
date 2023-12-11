@@ -1,5 +1,6 @@
 *.class
-
+*.exe
+trees/node_modules/
 CLanguage/clang.md
 CLanguage/const
 AdventofCode/day3/solution/tmp/
