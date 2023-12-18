@@ -14,6 +14,18 @@ export class DoublyLinkedList<T>{
         }
     }
 
+    append(value: T): void {
+    }
+
+    prepend(value: T): void {
+    }
+
+    convertLinkedListToArray(): T[] {
+        return []
+    }
+    deleteNodeByValue(value: T): void {
+    }
+
     convertArrayToLinkedList(data: T[]): Node<T> {
         let current = this.head
         let prev: Node<T> | null = current
@@ -40,12 +52,12 @@ export class DoublyLinkedList<T>{
         return this.head = this.head.next
     }
     deleteTail(): Node<T> | null {
-        if(!this.head || this.head.next == null) return this.head = null
+        if (!this.head || this.head.next == null) return this.head = null
         let current = this.head
         while (current.next) {
             current = current.next
         }
-        if (current.prev){
+        if (current.prev) {
             current.prev.next = null
         }
         return this.head
@@ -71,5 +83,38 @@ export class DoublyLinkedList<T>{
             prev: current
         }
         current.next = newNode
+    }
+
+    reverse(): void {
+        let stack: T[] = []
+
+        let current = this.head
+
+        while (current) {
+            stack.push(current.value)
+            current = current.next
+        }
+
+        let curr = this.head
+
+        while (curr) {
+            curr.value = stack.pop() as T
+            curr = curr.next
+        }
+    }
+
+    reverseSwapping() {
+        if (this.head == null || this.head.next == null) return
+
+        let current = this.head
+        let prev: Node<T> | null = null
+
+        while (current) {
+            prev = current.prev
+            current.prev = current.next
+            current.next = prev
+            current = current.prev as Node<T>
+        }
+        this.head = prev?.prev as Node<T>
     }
 }
