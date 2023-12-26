@@ -2,7 +2,18 @@ export type ListNode = {
     val: number
     next: ListNode | null
 }
-
+export function construct2DArray(original: number[], m: number, n: number): number[][] {
+    if (m * n !== original.length) {
+        return []
+    }
+    let res = new Array(m).fill(0).map(() => new Array(n).fill(0))
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            res[i][j] = original.shift() as number
+        }
+    }
+    return res
+};
 
 export function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
 

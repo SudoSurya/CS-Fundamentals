@@ -8,6 +8,24 @@ export class ListNode {
     }
 }
 
+export function removeNthFromEnd1(head: ListNode | null, n: number): ListNode | null {
+    let fast = head
+    let slow = head
+    for (let i = 0; i < n; i++) {
+        fast = fast?.next as ListNode
+    }
+    if (!fast) {
+        return head?.next || null
+    }
+    while (fast.next) {
+        fast = fast.next
+        slow = slow?.next as ListNode
+    }
+    if (slow && slow.next) {
+        slow.next = slow.next.next
+    }
+    return head
+};
 
 export function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
     let length = 0;
