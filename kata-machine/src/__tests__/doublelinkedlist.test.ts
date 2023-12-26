@@ -7,69 +7,70 @@ import { DoublyLinkedList } from "../linkedlist/double-linkedlist";
 
 // TODO
 describe("Doubly Linked List", () => {
-    test.skip("should create empty linked list", () => {
+    test("should create empty linked list", () => {
         const linkedList = new DoublyLinkedList(0);
-        expect(linkedList.toString()).toBe("");
+        expect(linkedList.log()).toBe("0\n");
     })
 
-    test.skip("should append node to linked list", () => {
+    test("should append node to linked list", () => {
         const linkedList = new DoublyLinkedList(0);
         linkedList.append(1);
         linkedList.append(2);
-        expect(linkedList.toString()).toBe("0,1,2");
+        expect(linkedList.log()).toBe("0\n1\n2\n");
     });
 
-    test.skip("should prepend node to linked list", () => {
+    test("should prepend node to linked list", () => {
         const linkedList = new DoublyLinkedList(0);
         linkedList.prepend(1);
         linkedList.prepend(2);
-        expect(linkedList.toString()).toBe("2,1,0");
+        expect(linkedList.log()).toBe("2\n1\n0\n");
     })
 
-    test.skip("should delete head node from linked list", () => {
+    test("should delete head node from linked list", () => {
         const linkedList = new DoublyLinkedList(0);
         linkedList.append(1);
         linkedList.append(2);
         linkedList.deleteHead();
-        expect(linkedList.toString()).toBe("1,2");
+        expect(linkedList.log()).toBe("1\n2\n");
     })
 
-    test.skip("should delete tail node from linked list", () => {
+    test("should delete tail node from linked list", () => {
         const linkedList = new DoublyLinkedList(0);
         linkedList.append(1);
         linkedList.append(2);
         linkedList.deleteTail();
-        expect(linkedList.toString()).toBe("0,1");
+        expect(linkedList.log()).toBe("0\n1\n");
     })
 
-    test.skip("should convert array to linked list", () => {
+    test("should convert array to linked list", () => {
         const linkedList = new DoublyLinkedList(0);
         const array = [1, 2, 3, 4, 5];
         linkedList.convertArrayToLinkedList(array);
-        expect(linkedList.toString()).toBe("0,1,2,3,4,5");
+        expect(linkedList.log()).toBe("0\n1\n2\n3\n4\n5\n");
     });
 
-    test.skip("should convert linked list to array", () => {
+    test("should convert linked list to array", () => {
         const linkedList = new DoublyLinkedList(0);
-        const array = [1, 2, 3, 4, 5];
-        linkedList.convertArrayToLinkedList(array);
-        expect(linkedList.convertLinkedListToArray()).toEqual(array);
+        linkedList.append(1);
+        linkedList.append(2);
+        let res = linkedList.convertLinkedListToArray();
+        expect(res).toEqual([0, 1, 2]);
     })
 
-    test.skip("should delete node by value from linked list", () => {
+    test("should delete node by value from linked list", () => {
         const linkedList = new DoublyLinkedList(0);
         linkedList.append(1);
         linkedList.append(2);
         linkedList.deleteNodeByValue(1);
-        expect(linkedList.toString()).toBe("0,2");
+        expect(linkedList.log()).toBe("0\n2\n");
     })
 
-    test.skip("should delete node by value from linked list", () => {
+    test("should delete node by value from linked list", () => {
         const linkedList = new DoublyLinkedList(0);
         linkedList.append(1);
         linkedList.append(2);
         linkedList.deleteNodeByValue(1);
-        expect(linkedList.toString()).toBe("0,2");
+        expect(linkedList.log()).toBe("0\n2\n");
     })
 });
 

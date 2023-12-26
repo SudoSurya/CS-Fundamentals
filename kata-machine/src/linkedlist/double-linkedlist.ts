@@ -15,15 +15,51 @@ export class DoublyLinkedList<T>{
     }
 
     append(value: T): void {
+        if(!this.head) return
+        let current = this.head
+        while (current.next) {
+            current = current.next
+        }
+        const newNode: Node<T> = {
+            value: value,
+            next: null,
+            prev: current
+        }
+        current.next = newNode
     }
 
     prepend(value: T): void {
+        const newNode: Node<T> = {
+            value: value,
+            next: this.head,
+            prev: null
+        }
+        this.head = newNode
     }
 
     convertLinkedListToArray(): T[] {
-        return []
+       let current = this.head
+       let arr: T[] = []
+       while(current){
+           arr.push(current.value)
+           current = current.next
+       }
+       return arr
     }
     deleteNodeByValue(value: T): void {
+        if (!this.head) return
+        let current = this.head
+        while (current) {
+            if (current.value == value) {
+                if (current.prev) {
+                    current.prev.next = current.next
+                }
+                if (current.next) {
+                    current.next.prev = current.prev
+                }
+            }
+            current = current.next as Node<T>
+        }
     }
 
     convertArrayToLinkedList(data: T[]): Node<T> {

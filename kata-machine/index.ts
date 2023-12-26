@@ -1,39 +1,22 @@
-import { DoublyLinkedList } from "./src/linkedlist/double-linkedlist";
-import { ListNode, addTwoNumbers } from "./src/linkedlist/problems/addTwoNumbers";
+import { ListNode, removeNthFromEnd } from "./src/linkedlist/problems/removeNthNode";
 
-const head = new DoublyLinkedList<number>(0)
-head.insertAtEnd(1)
-head.insertAtEnd(2)
-head.insertAtEnd(3)
-head.insertAtEnd(4)
-console.log(head.log())
-head.reverse()
-console.log(head.log())
-head.reverseSwapping()
-console.log(head.log())
 
-console.log("-------------------");
-let l1: ListNode = {
-    val: 2,
-    next: {
-        val: 4,
-        next: {
-            val: 3,
-            next: null
-        }
+// Path: index.ts
+let head = new ListNode(1);
+head.next = new ListNode(2);
+head.next.next = new ListNode(3);
+head.next.next.next = new ListNode(4);
+head.next.next.next.next= new ListNode(5);
+
+printList(head);
+let result = removeNthFromEnd(head, 2);
+console.log(result);
+printList(result);
+
+function printList(head: ListNode | null) {
+    let curr = head;
+    while (curr) {
+        console.log(curr.val);
+        curr = curr.next;
     }
 }
-
-let l2: ListNode = {
-    val: 5,
-    next: {
-        val: 6,
-        next: {
-            val: 4,
-            next: null
-        }
-    }
-}
-
-console.log(addTwoNumbers(l1, l2))
-
