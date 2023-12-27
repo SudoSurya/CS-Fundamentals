@@ -30,7 +30,6 @@ public class LongRep {
             map.put(arr[R], R);
             R++;
             count++;
-
         }
 
         return Math.max(max, count);
