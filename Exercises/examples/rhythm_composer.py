@@ -7,7 +7,8 @@ def is_prime(num):
     return True
 
 def find_prime(start, end):
-    prime_numbers = [num for num in range(start, end + 1) if is_prime(num)]
+    prime_numbers = [num for num in range(start, end + 1) if
+                     is_prime(num)]
     return prime_numbers
 
 # Get user input

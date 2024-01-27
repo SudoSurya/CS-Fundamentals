@@ -1,6 +1,8 @@
 def find_not_working_doctors(all_doctors, working_doctors):
     # Use list comprehension to find the doctors who are not working
-    not_working_doctors = [doctor_id for doctor_id in all_doctors if doctor_id not in working_doctors]
+    not_working_doctors = [doctor_id
+    for doctor_id in all_doctors if
+                           doctor_id not in working_doctors]
     return not_working_doctors
 
 # Get the size of the first list from the user
@@ -44,7 +46,8 @@ for _ in range(size_working_doctors):
     working_doctors.append(doctor_id)
 
 # Call the function to find not working doctors
-not_working_doctors = find_not_working_doctors(all_doctors, working_doctors)
+not_working_doctors = find_not_working_doctors(all_doctors,
+                                        working_doctors)
 
 # Display the result
 print("Not Working Doctors' IDs are:")
