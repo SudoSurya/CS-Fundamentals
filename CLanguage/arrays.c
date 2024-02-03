@@ -1,6 +1,4 @@
 #include "stdio.h"
-#include <limits.h>
-#include <string.h>
 
 char *month_name(int n) {
   static char *name[] = {"Illegal month", "January",   "February", "March",
@@ -18,10 +16,11 @@ int strlen1(char *s) {
   return n;
 }
 
-int* pass_by_value(int *x) {
+int *pass_by_value(int *x) {
   *x = 10;
   return x;
 }
+
 void ere() {
   int arr[5] = {1, 2, 3, 4, 5};
   for (int i = 0; arr[i] != '\0'; i++) {
@@ -31,7 +30,9 @@ void ere() {
 
 static char daytab[2][13] = {
     {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
-    {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}};
+    {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
+};
+
 int day_of_year(int year, int month, int day) {
   int i, leap;
   leap = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
@@ -40,6 +41,7 @@ int day_of_year(int year, int month, int day) {
   }
   return day;
 }
+
 int main(int argc, char *argv[]) {
   int arr[5];
   int *pa = &arr[0];
@@ -51,9 +53,9 @@ int main(int argc, char *argv[]) {
     printf("arr[%d] = %d\n", i, arr[i]);
   }
   int nums = 10111;
-  int ref = pass_by_value(&nums);
+  int *ref = pass_by_value(&nums);
   printf("nums = %d\n", nums);
-  printf("ref = %d\n", ref);
+  printf("ref = %d\n", *ref);
   ere();
   printf("----------------------------------------\n");
   while (--argc > 0) {

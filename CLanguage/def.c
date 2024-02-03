@@ -9,6 +9,7 @@ enum boolean { NO, YES };
 
 int main() {
   int a;
+  int true = 9;
   a = MAX;
   printf("%d\n", a);
   char s[] = MIN;

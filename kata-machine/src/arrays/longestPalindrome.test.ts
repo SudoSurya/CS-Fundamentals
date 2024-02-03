@@ -20,4 +20,7 @@ describe("Longest Palindromic Substring", () => {
     test("Example 6", () => {
         expect(longestPalindrome("ccc")).toBe("ccc");
     })
+    test("Example 7", () => {
+        expect(longestPalindrome("aaaa")).toBe("aaaa");
+    })
 });

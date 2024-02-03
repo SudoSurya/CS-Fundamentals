@@ -11,11 +11,9 @@ export function lengthOfLongestSubstring(s: string): number {
     // ^
     while (L < s.length) {
         let char = s.charAt(L);
-        console.log(char);
         if (map.has(char)) {
             map.delete(s.charAt(R));
             max = Math.max(max, L - R);
-            console.log("max",max);
             R++;
         }else{
             map.set(char, L);
