@@ -1,10 +1,17 @@
+/**
+    *@param {number[]} array
+**/
 function reference(array) {
     array.push(4);
     return array;
 }
 
 let myArray = [1, 2, 3];
-let res = reference(myArray);
+/**
+    * @type { string[] }
+**/
+let str = ["lkf"];
+let res = reference(str);
 console.log(res); // [1, 2, 3, 4]
 console.log(myArray); // [1, 2, 3, 4]
 
